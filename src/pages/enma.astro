@@ -7,10 +7,32 @@ import Layout from "../layouts/Layout.astro";
         <section class="w-full mx-auto lg:w-[740px] py-44 px-4 lg:px-0">
             <img src="./enma-logo.webp" alt="El logo del bot Enma" class="rounded-full size-40 mx-auto " />
             <h1 class="text-center text-4xl font-bold mt-8">Enma</h1>
-            <p class="text-center text-white mt-2">Un bot de Discord para moderar y divertirse</p>
-            <div class="flex justify-center mt-8 gap-6">
-                <a href="https://discord.com/api/oauth2/authorize?client_id=1171876289632813148&permissions=8&scope=applications.commands+bot" class="bg-white transition-all duration-200 ease-in-out transform hover:scale-110 hover:bg-[#FF00B2] hover:text-white text-black px-4 py-2 rounded-md">Invitar</a>
-                <a href="https://discord.gg/MFAAW3ahmy" class="bg-white transition-all duration-200 ease-in-out transform hover:scale-110 hover:bg-[#FF00B2] hover:text-white text-black px-4 py-2 rounded-md">Discord de soporte</a>
+            <p class="text-center text-white mt-2">Un bot de Discord que cumple las funciones de Auto Moderación, Diversión, Moderación y utilidad entre otras muchas funciones.</p>
+            <div class="flex justify-center mt-8 gap-5">
+                <a href="https://discord.com/api/oauth2/authorize?client_id=1171876289632813148&permissions=8&scope=applications.commands+bot" class="bg-[#c22994] transition-all duration-200 ease-in-out transform hover:scale-110 hover:bg-white hover:text-black text-white px-4 py-2 rounded-md">Invitar</a>
+                <a href="https://discord.gg/MFAAW3ahmy" class="bg-white transition-all duration-200 ease-in-out transform hover:scale-110 hover:bg-[#c22994] hover:text-white text-black px-4 py-2 rounded-md">Discord de soporte</a>
+            </div>
+        </section>
+
+        <section class="w-full mx-auto lg:w-[740px] py-36 px-4 lg:px-0">
+            <h2 class="text-center text-4xl font-bold mt-8">Categorías de Comandos</h2>
+            <div class="grid grid-cols-1 gap-8 mt-8">
+                <!-- Categorías de comandos -->
+                <div class="flex items-start gap-4 p-4 border rounded">
+                    <img src="/enma-logo.webp" alt="Categoría Administrador" class="rounded-md w-40 h-40" />
+                    <div>
+                        <h3 class="text-xl font-bold">Administrador</h3>
+                        <p class="text-lg">Descripción de la categoría Administrador</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4 p-4 border rounded">
+                    <img src="/enma-logo.webp" alt="Categoría Bot" class="rounded-md w-40 h-40" />
+                    <div>
+                        <h3 class="text-xl font-bold">Bot</h3>
+                        <p class="text-lg">Descripción de la categoría Bot</p>
+                    </div>
+                </div>
+                <!-- Más categorías... -->
             </div>
         </section>
     </main>
