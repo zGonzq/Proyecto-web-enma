@@ -1,14 +1,23 @@
 ---
-let currentUrl = new URL(Astro.request.url).pathname;
 ---
 
 <header class="flex justify-center items-center py-3 w-full md:w-[1120px] mx-auto">
 
     <nav class="flex flex-col md:flex-row gap-4 md:gap-x-10 opacity-90">
-        <a href="/" class={`nav-link transition-colors duration-200 ${currentUrl === '/' ? 'text-[#FF00B2]' : 'hover:text-[#FF00B2]'}`}>Inicio</a>
-        <a href="/about" class={`nav-link transition-colors duration-200 ${currentUrl === '/about' ? 'text-[#FF00B2]' : 'hover:text-[#FF00B2]'}`}>Sobre mí</a>
-        <a href="/projects" class={`nav-link transition-colors duration-200 ${currentUrl === '/projects' ? 'text-[#FF00B2]' : 'hover:text-[#FF00B2]'}`}>Proyectos</a>
-        <a href="/contact" class={`nav-link transition-colors duration-200 ${currentUrl === '/contact' ? 'text-[#FF00B2]' : 'hover:text-[#FF00B2]'}`}>Contacto</a>
-        <a href="/enma" class={`nav-link transition-colors duration-200 ${currentUrl === '/enma' ? 'text-[#FF00B2]' : 'hover:text-[#FF00B2]'}`}>Enma</a>
+        <a href="/" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Inicio</a>
+        <a href="/about" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Sobre mí</a>
+        <a href="/projects" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Proyectos</a>
+        <a href="/contact" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Contacto</a>
+        <a href="/enma" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Enma</a>
     </nav>
 </header>
+
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === window.location.pathname) {
+            link.classList.add('text-[#FF00B2]');
+        }
+    });
+</script>
