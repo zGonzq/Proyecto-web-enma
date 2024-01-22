@@ -1,23 +1,39 @@
 ---
 ---
 
-<header id="header-nav" class="fixed top-0 left-0 right-0 z-50 w-full flex justify-center items-center py-3">
-
-    <nav class="flex flex-col md:flex-row gap-4 md:gap-x-10 opacity-90">
-        <a href="/" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Inicio</a>
-        <a href="/about" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Sobre mí</a>
-        <a href="/projects" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Proyectos</a>
-        <a href="/contact" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Contacto</a>
-        <a href="/enma" class="nav-link transition-colors duration-200 hover:text-[#FF00B2]">Enma</a>
+<header id="header-nav" class="fixed top-0 left-0 right-0 z-50 w-full flex justify-between items-center py-3 px-4 md:px-8">
+    <a href="/">
+        <img src="/favicon.webp" alt="Logo" class="h-8 w-auto" />
+    </a>
+    <button id="menu-button" class="md:hidden p-2">
+        <span class="block w-6 h-0.5 bg-white"></span>
+        <span class="block w-6 h-0.5 bg-white mt-2"></span>
+        <span class="block w-6 h-0.5 bg-white mt-2"></span>
+    </button>
+    <nav id="menu" class="transform translate-x-[110%] md:translate-x-0 md:flex w-full justify-center items-center flex-col md:flex-row gap-10 md:gap-x-12 opacity-90 transition-transform duration-200 ease-in-out">
+        <a href="/" class="nav-link transition-colors duration-200 hover:text-[#FF00B2] px-1">Inicio</a>
+        <a href="/about" class="nav-link transition-colors duration-200 hover:text-[#FF00B2] px-1">Sobre Mí</a>
+        <a href="/contact" class="nav-link transition-colors duration-200 hover:text-[#FF00B2] px-1">Contacto</a>
+        <a href="/enma" class="nav-link transition-colors duration-200 hover:text-[#FF00B2] px-1">Enma</a>
     </nav>
 </header>
 
 <script>
-    const navLinks = document.querySelectorAll('.nav-link');
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
 
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === window.location.pathname) {
-            link.classList.add('text-[#FF00B2]');
-        }
-    });
+    if (menuButton && menu) {
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('translate-x-[110%]');
+            menu.classList.toggle('md:translate-x-0');
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === window.location.pathname) {
+                link.classList.add('text-[#FF00B2]');
+            }
+        });
+    }
 </script>
