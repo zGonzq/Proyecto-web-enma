@@ -40,10 +40,11 @@ const { title } = Astro.props;
 <style is:global>
 	:root {
 		color-scheme: light dark;
-		scrollbar-gutter: stable;
 	}
 	html {
-		font-family: 'Onest Variable', sans-serif;;
+		font-family: 'Onest Variable', sans-serif;
+		overflow: auto;
+		scrollbar-gutter: stable;
 
 	}
 
@@ -54,18 +55,5 @@ const { title } = Astro.props;
 		height: 100vh;
 	}
 
-	#header-nav {
-		animation: blur linear both;
-		animation-timeline: scroll();
-		animation-range: 50px;
-	}
 
-	@keyframes blur {
-		to {
-			box-shadow: 0px 5px 10px -5px hsla(0, 0%, 100%, 0.1),
-				0px 0px 0 1px hsla(0, 0%, 100%, 0.3);
-			background: rgba(10, 20, 51, 0.531);
-			backdrop-filter: blur(10px);
-		}
-	}
 </style>
