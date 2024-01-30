@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SocialButton from "../components/SocialButton.astro";
 ---
 
 <Layout title="zGonzq | Portafolios y Enma Discord Bot">
     <main>
-        <section id="" class="w-full mx-auto lg:w-[740px] py-44 px-4 lg:px-0">
+        <section id="" class="w-full mx-auto lg:w-[740px] pt-44 px-4 lg:px-0">
             <img 
             class="rounded-full justify-center size-40 mx-auto" 
             src="./Logo-Perfil.webp" 
@@ -15,8 +16,14 @@ import Layout from "../layouts/Layout.astro";
                 Estudiante de Analista Programador de la universidad Santo Tomás de Temuco, Chile.
                 Titulado de Gráfico de nivel Medio y en constante aprendizaje del área de la programación.
             </h2>
+            <div class="flex flex-wrap justify-center">
+                <SocialButton icon="/youtube.svg" link="https://www.youtube.com/@zgonzq" alt="Youtube de zGonzq" />
+                <SocialButton icon="/github.svg" link="https://www.github.com/zgonzq" alt="Github de zGonzq" />
+                <SocialButton icon="/twitch.svg" link="https://www.twitch.tv/zgonzq" alt="Twitch de zGonzq" />
+                <SocialButton icon="/twitter.svg" link="https://www.twitter.com/zgonzq" alt="Twitter de zGonzq" />
+                <SocialButton icon="/discord.svg" link="https://discord.gg/MFAAW3ahmy" alt="Discord de zGonzq" />
+            </div>
         </section>
-
 
     </main>
 </Layout>

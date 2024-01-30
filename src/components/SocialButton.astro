@@ -1,0 +1,14 @@
+---
+interface Props {
+    icon: string
+    link: string
+    alt: string
+}
+const { icon, link, alt } = Astro.props;
+---
+
+<div class="flex justify-center">
+    <a href={link} target="_blank" class="bg-gray-300 dark:bg-gray-800 bg-opacity-25 hover:bg-gray-300 dark:hover:bg-gray-700 transition-all duration-200 ease-in-out transform hover:scale-110 rounded-lg p-2 flex items-center space-x-2 m-1">
+        <img src={icon} alt={alt} class="w-4 h-4 dark:text-white " />
+    </a>
+</div>
