@@ -21,11 +21,11 @@ const { title } = Astro.props;
 		<meta property="og:description" content="Portafolio de Gonzalo, diseñador gráfico y programador, desarrollador de bots de Discord y fanático de los Videojuegos">
 		<meta property="og:image" content="/enma-logo.webp">
 		<meta name="description" content="Portafolio de Gonzalo, diseñador gráfico y programador, desarrollador de bots de Discord y fanático de los Videojuegos" />
-		<meta name="keywords" content="Gonzalo, zGonzq, Gqnza, zGonzq Github, Gonzalo Github, Gonzalo Portafolio, Gonzalo Portfolio, Gonzalo Web, Gonzalo Web Developer, Gonzalo Web Designer, Gonzalo Web Developer Portfolio, Gonzalo Web Designer Portfolio, Gonzalo Web Developer Portafolio, Gonzalo Web Designer Portafolio, Gonzalo Web Developer Website, Enma, Enma Bot, Enma Discord Bot, Discord bot" />
+		<meta name="keywords" content="Gonzalo, Gonzalo Leal, Portafolio Gonzalo Leal, Portfolio Gonzalo Leal, zGonzq, Gqnza, zGonzq Github, Gonzalo Github, Gonzalo Portafolio, Gonzalo Portfolio, Gonzalo Web, Gonzalo Web Developer, Gonzalo Web Designer, Gonzalo Web Developer Portfolio, Gonzalo Web Designer Portfolio, Gonzalo Web Developer Portafolio, Gonzalo Web Designer Portafolio, Gonzalo Web Developer Website, Enma, Enma Bot, Enma Discord Bot, Discord bot" />
 		<meta name="content" content="" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.webp"/>
-		<meta content="#FF00B2" data-react-helmet="true" name="theme-color" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+		<meta content="#ff8e44" data-react-helmet="true" name="theme-color" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<SpeedInsights />
@@ -70,7 +70,7 @@ const { title } = Astro.props;
     window.addEventListener('DOMContentLoaded', (event) => {
         const themeToggle = document.getElementById('theme-toggle');
         const sunIcon = document.getElementById('sun-icon');
-
+        
         if (!sunIcon || !themeToggle) {
             return;
         }
@@ -106,6 +106,21 @@ const { title } = Astro.props;
                 sunIcon.classList.add('text-white');
                 localStorage.setItem('theme', 'dark');
             }
+        });
+
+        // Escucha los cambios en la preferencia de color del sistema y aplica el tema correspondiente
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            const newTheme = e.matches ? 'dark' : 'light';
+            if (newTheme === 'dark') {
+                document.body.classList.add('dark');
+                sunIcon.classList.remove('text-black');
+                sunIcon.classList.add('text-white');
+            } else {
+                document.body.classList.remove('dark');
+                sunIcon.classList.remove('text-white');
+                sunIcon.classList.add('text-black');
+            }
+            localStorage.setItem('theme', newTheme);
         });
     });
 </script>
