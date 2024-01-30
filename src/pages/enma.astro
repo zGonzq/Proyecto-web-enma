@@ -1,10 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import EnmaLayout from "../layouts/EnmaLayout.astro";
+import GlassCard from "../components/GlassCard.astro";
+
 ---
 
-<Layout title="Enma | Discord Bot">
+<EnmaLayout title="Enma | Discord Bot">
     <main>
-        <section class="w-full mx-auto lg:w-[740px] py-44 px-4 lg:px-0">
+        <section id="inicio" class="w-full mx-auto lg:w-[740px] py-44 px-4 lg:px-0">
             <img src="./enma-logo.webp" alt="El logo del bot Enma" class="rounded-full size-40 mx-auto " />
             <h1 class="text-center text-4xl font-bold mt-8">Enma</h1>
             <p class="text-center text-white mt-2">Un bot de Discord que cumple las funciones de Auto Moderación, Diversión, Moderación y utilidad entre otras muchas funciones.</p>
@@ -15,41 +17,43 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <section class="w-full mx-auto lg:max-w-[740px] py-36 px-4 lg:px-0">
-            <h2 class="text-center text-4xl font-bold mt-8">Categorías de Comandos</h2>
+            <h2 id="comandos" class="text-center text-4xl font-bold mt-8">Categorías de Comandos</h2>
             <div class="grid gap-8 mt-8">
                 <!-- Categoría de comandos -->
                 <div>
                     <h3 class="text-xl font-bold">Administrador</h3>
                     <!-- Comandos -->
                     <div class="grid gap-4 mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 1</h4>
-                            <p class="text-base">Descripción del comando 1</p>
-                        </div>
-                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 2</h4>
-                            <p class="text-base">Descripción del comando 2</p>
-                        </div>
-                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 2</h4>
-                            <p class="text-base">Descripción del comando 2</p>
-                        </div>
-                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 2</h4>
-                            <p class="text-base">Descripción del comando 2</p>
-                        </div>
-                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 2</h4>
-                            <p class="text-base">Descripción del comando 2</p>
-                        </div>                        <div class="p-4 border border-custom rounded bg-[rgba(194,41,148,0.1)] backdrop-blur-md transition-transform duration-200 ease-in-out hover:shadow-lg hover:scale-105">
-                            <h4 class="text-lg font-bold">Comando 2</h4>
-                            <p class="text-base">Descripción del comando 2</p>
-                        </div>
+                        <GlassCard title="/set-autrole" description="Establece un sistema de auto roles que puedes configurar." />
+                        <GlassCard title="/set-logs" description="Establece un sistema de logs que puedes configurar." />
+                        <GlassCard title="/colors-role" description="Crea colores Rainbow y de la librería de discord." />
+                        <GlassCard title="/set-welcome" description="Establece un sistema de bienvenida que puedes configurar." />
+                        <GlassCard title="/config" description="Muestra la configuración del servidor." />
+                        <GlassCard title="/set-count" description="Crea un sistema de conteo para entretenimiento de los usuarios del discord." />
+                        <GlassCard title="/reset-levels" description="Reinicia los niveles de los usuarios del servidor." />
+                        <GlassCard title="/set-store" description="Crea la tienda del servidor." />
+                        <GlassCard title="/set-sugerencias" description="Configura el canal de sugerencias." />
+                        <GlassCard title="/config-automod" description="Configura el sistema de auto moderación del discord." />
+
+
                         <!-- Más comandos... -->
                     </div>
                 </div>
+                <div>
+                    <h3 id="comandos" class="text-xl font-bold">Bot</h3>
+                    <!-- Comandos -->
+                    <div class="grid gap-4 mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                        <GlassCard title="/about-me" description="Muestra la información del bot." />
+                        <GlassCard title="/help" description="Muestra los comandos del bot listados por categorías." />
+                        <GlassCard title="/invite" description="Muestra el enlace de invitación del bot y discord de soporte." />
+                        <GlassCard title="/ping" description="Muestra la latencia del bot." />
+                        <GlassCard title="/lang" description="Cambia el idioma del bot." />
+
+                        <!-- Más comandos... -->
+                    </div>
+
                 <!-- Más categorías... -->
             </div>
         </section>
     </main>
-</Layout>
+</EnmaLayout>
