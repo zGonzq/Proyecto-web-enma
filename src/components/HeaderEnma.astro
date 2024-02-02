@@ -1,34 +1,45 @@
 ---
+import Logo from '../components/icons/Logo.astro';
 ---
 
-<nav class="bg-[rgb(10,20,51)] border-gray-200 sticky top-0 z-50">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="/Logo-white.svg" class="h-8" alt="Flowbite Logo" />
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm transition-colors text-[#c22994] hover:text-white rounded-lg md:hidden hover:bg-[#c22994] focus:outline-none focus:ring-2 focus:ring-[#c22994]   " aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Abrir menú</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:justify-center md:items-center" >
-          <li>
-            <a href="/enma#inicio" class="block py-2 px-3 text-white bg-[#c22994] rounded md:bg-transparent md:text-white md:p-0 md:hover:text-[#c22994] transition-colors " aria-current="page">Inicio</a>
-          </li>
-          <li>
-            <a href="/enma#comandos" class="block py-2 px-3 text-white hover:text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#c22994] md:p-0  transition-colors duration-200">Comandos</a>
-          </li>
-          <li>
-            <a href="/enma#eventos" class="block py-2 px-3 text-white hover:text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#c22994] md:p-0  transition-colors duration-200">Enma</a>
-          </li>
-          <li>
-            <a href="/enma#info" class="block py-2 px-3 text-white hover:text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#c22994] md:p-0  transition-colors duration-200">Información</a>
-          </li>
-      </div>
+<nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 sticky top-0 z-50">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <Logo class="size-8"/>
+    </a>
+    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm transition-colors dark:text-white text-black hover:text-white rounded-lg md:hidden dark:hover:bg-gray-800 hover:dark:text-white hover:bg-black focus:outline-none   " aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Abrir menú</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:justify-center md:items-center" >
+        <li>
+          <a href="#" class="block py-2 px-3 text-black md:text-black dark:md:text-white dark:text-white hover:text-black rounded hover:dark:bg-gray-800 md:hover:bg-white md:hover:dark:bg-gray-900 hover:bg-gray-300 md:border-0 md:hover:text-[#c22994] md:hover:dark:text-[#c22994] md:p-0 transition-colors duration-200" aria-current="page">Inicio</a>
+        </li>
+        <li>
+          <a href="#projects" class="block py-2 px-3 text-black md:text-black dark:md:text-white dark:text-white hover:text-black rounded hover:dark:bg-gray-800 md:hover:bg-white md:hover:dark:bg-gray-900 hover:bg-gray-300 md:border-0 md:hover:text-[#c22994] md:hover:dark:text-[#c22994] md:p-0  transition-colors duration-200">Proyectos</a>
+        </li>
+        <li>
+          <a href="#information" class="block py-2 px-3 text-black md:text-black dark:md:text-white dark:text-white hover:text-black rounded hover:dark:bg-gray-800 md:hover:bg-white md:hover:dark:bg-gray-900 hover:bg-gray-300 md:border-0 md:hover:text-[#c22994] md:hover:dark:text-[#c22994] md:p-0  transition-colors duration-200">Información</a>
+        </li>
+        <li>
+          <a href="#contact" class="block py-2 px-3 text-black md:text-black dark:md:text-white dark:text-white hover:text-black rounded hover:dark:bg-gray-800 md:hover:bg-white md:hover:dark:bg-gray-900 hover:bg-gray-300 md:border-0 md:hover:text-[#c22994] md:hover:dark:text-[#c22994] md:p-0  transition-colors duration-200">Contacto</a>
+        </li>
+        <li>
+          <a href="/enma" class="block py-2 px-3 text-black dark:text-white dark:hover:text-white hover:text-black rounded hover:bg-gray-300 md:hover:bg-white dark:hover:bg-gray-800 md:hover:dark:bg-gray-900  md:border-0 md:hover:text-[#c22994] md:hover:dark:text-[#c22994] md:p-0  transition-colors duration-200">Enma</a>
+        </li>
     </div>
-  </nav>
-  
+    <div>
+      <button id="theme-toggle" class="p-2">
+        <svg id="sun-icon" class="w-6 h-6 text-black dark:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" stroke="currentColor">
+          <path fill="white" d="M 14.984375 0.98632812 A 1.0001 1.0001 0 0 0 14 2 L 14 5 A 1.0001 1.0001 0 1 0 16 5 L 16 2 A 1.0001 1.0001 0 0 0 14.984375 0.98632812 z M 5.796875 4.7988281 A 1.0001 1.0001 0 0 0 5.1015625 6.515625 L 7.2226562 8.6367188 A 1.0001 1.0001 0 1 0 8.6367188 7.2226562 L 6.515625 5.1015625 A 1.0001 1.0001 0 0 0 5.796875 4.7988281 z M 24.171875 4.7988281 A 1.0001 1.0001 0 0 0 23.484375 5.1015625 L 21.363281 7.2226562 A 1.0001 1.0001 0 1 0 22.777344 8.6367188 L 24.898438 6.515625 A 1.0001 1.0001 0 0 0 24.171875 4.7988281 z M 15 8 A 7 7 0 0 0 8 15 A 7 7 0 0 0 15 22 A 7 7 0 0 0 22 15 A 7 7 0 0 0 15 8 z M 2 14 A 1.0001 1.0001 0 1 0 2 16 L 5 16 A 1.0001 1.0001 0 1 0 5 14 L 2 14 z M 25 14 A 1.0001 1.0001 0 1 0 25 16 L 28 16 A 1.0001 1.0001 0 1 0 28 14 L 25 14 z M 7.9101562 21.060547 A 1.0001 1.0001 0 0 0 7.2226562 21.363281 L 5.1015625 23.484375 A 1.0001 1.0001 0 1 0 6.515625 24.898438 L 8.6367188 22.777344 A 1.0001 1.0001 0 0 0 7.9101562 21.060547 z M 22.060547 21.060547 A 1.0001 1.0001 0 0 0 21.363281 22.777344 L 23.484375 24.898438 A 1.0001 1.0001 0 1 0 24.898438 23.484375 L 22.777344 21.363281 A 1.0001 1.0001 0 0 0 22.060547 21.060547 z M 14.984375 23.986328 A 1.0001 1.0001 0 0 0 14 25 L 14 28 A 1.0001 1.0001 0 1 0 16 28 L 16 25 A 1.0001 1.0001 0 0 0 14.984375 23.986328 z"></path>
+        </svg>
+    </button>
+    </div>
+  </div>
+</nav>
 
-  <script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+<script src="../../node_modules/flowbite/dist/flowbite.min.js"></script>
+
