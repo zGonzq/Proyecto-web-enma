@@ -1,7 +1,7 @@
 ---
-import Header from "../components/Header.astro";
+import Header from "../components/layoutIndex/Header.astro";
 import '@fontsource-variable/onest';
-import Footer from "../components/Footer.astro";
+import Footer from "../components/layoutIndex/Footer.astro";
 import  SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
@@ -39,16 +39,16 @@ const { title } = Astro.props;
 </html>
 <style is:global>
     :root {
-        --background-color-light: #ffffff; /* Color de fondo para el tema claro */
-        --background-color-dark: #111827; /* Color de fondo para el tema oscuro */
+        --background-color-light: #ffffff;
+        --background-color-dark: #111827; 
     }
 
     body {
-        background-color: var(--background-color-light); /* Por defecto, se usa el color de fondo claro */
+        background-color: var(--background-color-light);
     }
 
     body.dark {
-        background-color: var(--background-color-dark); /* Cuando la clase 'dark' se añade al body, se usa el color de fondo oscuro */
+        background-color: var(--background-color-dark); 
     }
 	html {
 		
@@ -75,10 +75,8 @@ const { title } = Astro.props;
             return;
         }
 
-        // Comprueba el tema actual en localStorage y ajusta el color del SVG
         let currentTheme = localStorage.getItem('theme');
         if (!currentTheme) {
-            // Si no hay un tema en localStorage, usa el tema del sistema operativo
             currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             localStorage.setItem('theme', currentTheme);
         }
@@ -93,7 +91,6 @@ const { title } = Astro.props;
             sunIcon.classList.add('text-black');
         }
 
-        // Cambia el tema al hacer clic en el botón
         themeToggle.addEventListener('click', () => {
             if (document.body.classList.contains('dark')) {
                 document.body.classList.remove('dark');
@@ -108,7 +105,6 @@ const { title } = Astro.props;
             }
         });
 
-        // Escucha los cambios en la preferencia de color del sistema y aplica el tema correspondiente
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
             const newTheme = e.matches ? 'dark' : 'light';
             if (newTheme === 'dark') {
