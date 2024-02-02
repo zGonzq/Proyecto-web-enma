@@ -1,0 +1,68 @@
+---
+let words = ['Diseñador Gráfico', 'Programador'];
+---
+
+<div class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+  <span id="word" class="texto-degradado inline-block animate-flipInX duration-1000" data-words={JSON.stringify(words)}>Diseñador Gráfico</span>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    let index = 0;
+    let wordElement = document.getElementById('word');
+    if (wordElement && wordElement.dataset.words) {
+      const words = JSON.parse(wordElement.dataset.words);
+
+      setInterval(() => {
+        index = (index + 1) % words.length;
+        if (wordElement) {
+          const newElement = wordElement.cloneNode(true) as HTMLElement;
+          newElement.textContent = words[index];
+          if (wordElement.parentNode) {
+            wordElement.parentNode.replaceChild(newElement, wordElement);
+            wordElement = newElement;
+          }
+        }
+      }, 3000);
+    }
+  });
+</script>
+
+<style>
+  @keyframes flipInX {
+    from {
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+
+    40% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+
+    60% {
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+
+    80% {
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+
+    to {
+      transform: perspective(400px);
+    }
+  }
+
+  .animate-flipInX {
+    animation-name: flipInX;
+  }
+
+  .texto-degradado {
+    background: linear-gradient(to right, #FF8E44, #F91362, #35126A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+</style>
